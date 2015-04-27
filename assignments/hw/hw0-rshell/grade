@@ -1,8 +1,8 @@
-95/ 100
+105/ 100
 
   -15: no error checking for syscalls (-5 for each syscall, run checksyscalls.sh script in gitlearn/scripts to see detailed output - it takes c++ source files as arguments)
   
-Extra credit:10 /10
+Extra credit:10 /10 + 10 for Friday submission
   [ /10]all of prompts have the user information
 
 Part 1:30 /30
