@@ -1,10 +1,6 @@
 #Chmod System Call
 
-Documentation on the 'chmod()' system call which is used to change the mode and/or permissions of a file.
-
-##Chmod
-
-[man page - chmod] (http://man7.org/linux/man-pages/man2/chmod.2.html)
+Documentation on the `chmod()` system call which is used to change the mode and/or permissions of a file. This system call involves changing permissions bits. For example, 
 
 ##Inclusion
 
@@ -18,14 +14,15 @@ Documentation on the 'chmod()' system call which is used to change the mode and/
 
 ##Return Value
 
-Upon successful completion that the file has been changed, then a 0 is returned. Other wise -1 is returned and 'errno' is set
-to find the specific erro and no change to the file mode has occured.
+If the file was changed successfully, then a 0 is returned. If an error occurs then a -1 is returned and the variable errno is set. 
+
+[man page - chmod] (http://man7.org/linux/man-pages/man2/chmod.2.html)
 
 ##Description
 
 ###Parameters
-chmod() is used to change S_ISUID, S_ISGID, S_ISVTX, and other file permission bits that have been named by a pathname, 
-`path`, to the corresponding bits in the `mode` parameter. 
+`chmod()` is used to change S_ISUID, S_ISGID, S_ISVTX, and other file permission bits that have been named by a pathname, 
+`path` is defined as a pathnameto the corresponding bits in the `mode` parameter. 
 
 ###Permissions
 The file permission bits that are changed are defined in `sys/stat.h`
@@ -41,7 +38,7 @@ S_IXUSR)
 
 ##Examples
 
-In the example below, we will see how chmod() can be used to change permissions for the user, group, and others.
+In the example below, we will see how `chmod()` can be used to change permissions for the user, group, and others.
 
 ```
 #include <sys/stat.h>
