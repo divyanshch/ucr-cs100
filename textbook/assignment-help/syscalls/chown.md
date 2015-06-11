@@ -18,14 +18,13 @@ will set errno.
 ##Description
 
 `chown()` is used to change the user and group ownership of a file. In the function declaration, the `path` argument 
-specifies the file, and the `owner` and `group` parameters contain numerical values that will symbolize the IDs of the two. 
+specifies the file, and the owner and group parameters contain numerical values that will symbolize the IDs of the two. 
 The path will be changed to owner and group respectively.
 
 ##Example
 
-So if you would like to change the owner of a file, know a few things. When `ls -l` runs the first name that comes up after 
-`-rw-r--r-- _` is the owner and the second is the group. The information after just relates to time and filename. So say I 
-would like to change the owner of the file from root to siddu. How would I go about that? Observe the code below.
+When `ls -l` runs the first name that comes up after  `-rw-r--r-- _` is the owner and the second is the group. The information after just relates to time and filename. So say we would like to change the owner of the file from root to siddu. How would we go about that? Observe the code below.
+
 ```
 $ ls -l tmpfile
 -rw-r--r-- 1 root family 0 2015-06-04 22:20 tmpfile
@@ -36,9 +35,9 @@ $ ls -l tmpfile
 -rw-r--r-- 1 siddu family  0 2015-06-04 22:21 tmpfile 
 ```
 
-The ownership has changed! Simple, right? Well the ownership has changed from root to sidd after calling chown and calling 
-what file it should be completed with. So how would you change the group? Well if instead of calling `chown siddu tmpfile` I 
-called `chown :siddu tmpfile` the output would be as follows.
+The ownership has changed! Simple, right? The ownership has changed from root to siddu after calling chown and calling 
+what file it should be completed with. So how would you change the group? Well if instead of calling `chown siddu tmpfile` 
+called `chown :siddu tmpfile` we would expect what is written below to be the output. 
 
 ```
 $ls -l tmpfile
@@ -49,7 +48,7 @@ Notice the difference? If you want to change the group, you simply need to add a
 group. 
 
 What about changing the owner and group at the same time? If in the terminal and you have the idea to change both the owner 
-and the group from `root family` to `siddu:friends` then observe the code below.
+and the group from `root family` to `siddu friends` as the owner and group, then observe the code below.
 
 ```
 $ ls -l tmpfile
@@ -88,10 +87,4 @@ $ ls -l test.txt
 
 ```
 
-A very brief example of how chown works, but as you can see, chown runs passing in 'test.txt' as its path, -1 and 62 are the 
-owner and group respectively. Numerical IDs can be used, but in other examples command line arguments, or usernames can also 
-be used. As you can somewhat see, if the program was to be run in a terminal, you can clearly see that `music` changed to 
-`cs` indicating that the group has changed after the command was run. So with numerical values in coding, or just simply 
-calling chown in the terminal, you're allowed to change ownership as you see fit.
-
-
+A very brief example of how chown works within actual code, but as you can see, chown runs passing in 'test.txt' as its path, -1 and 62 are the owner and group respectively. Numerical IDs can be used, but in other examples  (as shown above): command line arguments, or usernames can also be used. As you can somewhat see, if the program was to be run in a terminal, you can clearly see that `music` changed to `cs` indicating that the group has changed after the command was run. So with numerical values in coding, or just simply calling chown in the terminal, ownership and group can be changed as you see fit. 
