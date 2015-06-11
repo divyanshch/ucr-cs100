@@ -18,13 +18,6 @@ If the file was changed successfully, then a 0 is returned. If an error occurs t
 
 [man page - chmod] (http://man7.org/linux/man-pages/man2/chmod.2.html)
 
-##Description
-
-###Parameters
-In the declaration as you can see, two parameters are passed in. File permission bits will usually be named by a pathname stored in `path.` Those bits correspond to the new file permissions in `mode` which is composed of the access permission flags needed for change. These permissions can be given to the owner, group, others, or on execution. Remember, the permissions can either be passed in as a flag or an octal integer. 
-
-Refer to the below link for a list of permissions.
-
 [List of permissions](www.delorie.com/gnu/docs/glibc/libc_288.html)
 
 ##Examples
@@ -53,7 +46,7 @@ int main(int argc, char **argv)
 }
 ```
 
-In this example we are attempting to change the permissions of a file, which was named `hello.t.` WE can clearly see `chmod` passing in `buf` which has been initialized a specific path for `hello.t.` The variable i is then run with the `strtol` function which stores an octal integer. Both are then used with `chmod` with the path, and a new file permission to be passed through thus changing the permissions of the file. 
+In this example we are attempting to change the permissions of a file, which was named `hello.t`. WE can clearly see `chmod` passing in `buf` which has been initialized a specific path for `hello.t.` The variable `i` is then run with the `strtol` function which stores an octal integer. Both are then used with `chmod` with the path, and a new file permission to be passed through thus changing the permissions of the file. 
 
 Normally we see more people using the actual flags, instead of the octal values. In the example below, we can see an instance of how permissions can be given with just the flag name, or multiple flag names.
 
