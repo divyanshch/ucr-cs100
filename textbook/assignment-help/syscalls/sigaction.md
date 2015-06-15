@@ -13,56 +13,7 @@ system call is very important to understand in order to properly modify signals.
 
 [man page](http://man7.org/linux/man-pages/man2/sigaction.2.html)
 
-
-In the function declaration, `int signum` is used to specify the signal. 
-The argument `act` can be used depending on if it is a null pointer or not. If `act` is a null pointer, signal handling will 
-remain unchanged and the call can mainly be used to gain knowledge of the current handling of a given signal. If it is not a 
-null pointer, `act` will then point to a structure specifying the action to be associated with the specified signal. If 
-`oldact` is not a null poointer, then the action that was most recently associated with the signal is stored into the 
-variable.
-
-
-##struct sigaction
-
-`sigaction` also has a structure that can be used to describe an action being taken. With the struct comes different function
-member types that can be used with member names for various purposes.
-
-For example,
-
-```
-1. If `void(*)(int)` then the member name that is used is `sa_handler` and is used to associate an action
-with the specified signal. 
-
-2. If member type is `int`, then the member name used is `sa_flags` that are special flags that will 
-affect the behavior of a signal. 
-
-3. If member type is `sigset_t`, then the member name used is `sa_mask` which is primarily used as an 
-additional set of signals to be blocked during execution of the signal-catching function. 
-
-```
-
-All the members of sigaction are defined in `signal.h` Listed above, are just a few members that are included, but many more 
-are listed within the library.
-
-
-###Flags
-Within the different fields of struct sigaction, there are flags that can be used to carry out different processes. 
-
-For example within the sa_flags field, defined in `signal.h` comes a  full list of flags that can be set and used for various
-purposes. 
-
-For example,
-
-1. SIG_BLOCK - Union of the current set and the signal set.
-
-2. SA_RESTART - Causes certain functions to become restartable.
-
-3. SS_DISABLE - Alternate signal stack will get disabled.
-
-Above are just a few flags, but the list of flags goes to nearly 15, all serving different purposes relating to disabling, 
-enabling, changing functions, or modifying sets.
-
-For a full list of the flags, refer to [signal.h](http://pubs.opengroup.org/onlinepubs/007908775/xsh/signal.h.html)
+For a full list of the flags, refer to [signal flags](http://pubs.opengroup.org/onlinepubs/007908775/xsh/signal.h.html)
  
 ##Examples
 
