@@ -15,13 +15,6 @@ Documentation on the `chown()` system call which is used to change ownership and
 `chown()` will return 0 if successfully changed owner and group of a file, and will return -1 if an error has occurred, which
 will set errno.
 
-##Description
-
-
-In the function declaration, the `path` argument specifies the file, and the owner and group parameters contain numerical values that will symbolize the IDs of the two.
-
-The path will be changed to owner and group respectively.
-
 [man page](http://man7.org/linux/man-pages/man2/chown.2.html)
 
 ##Example
