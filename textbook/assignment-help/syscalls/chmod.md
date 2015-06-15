@@ -110,23 +110,3 @@ So as you can see, by adding commas into the command, you can quickly give or ta
 
 So as you can see, `chmod()` provides to be very beneficial if permissions ever need to be given or taken away for any reason. 
 
-#fchmod()
-
-##Inclusion
-
-`#include <sys/types.h>`
-
-`#include <sys/stat.h>`
-
-##Declaration
-
-`int fchmod(int fd, mode_t mode);`
-
-##Return Value
-
-If the file was changed successfully, then a 0 is returned. If an error occurs then a -1 is returned and the variable errno is set. 
-
-
-`fchmod()` works the same way as `chmod()` with one key difference. In `chmod()` the first parameter passed in is a `const char*` but in `fchmod(),` the first parameter is an integer `fd` which is defined as a file descriptor. The two functions only differ in how the first parameter is specified.
-
-
